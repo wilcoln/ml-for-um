@@ -2,6 +2,14 @@
 \usepackage{sbc-template}
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}  
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \title{Machine Learning algorithms for User Modeling:\\ A State of the Art}
 
@@ -11,13 +19,12 @@
  \email{wilfried\_bounsi-djatcheu@etu.u-bourgogne.fr}
  }
   
-
 \begin{document} 
 
 \maketitle
 
 \begin{abstract}
-  A fundamental objective of human-computer interaction research is to make systems more usable, more useful, and to provide users with experiences fitting their specific background, knowledge and objectives. Specifically, today we want systems to do the "right" thing at the "right" time in the "right" way. Designers of human-computer systems face the formidable task of writing software for millions of users (at design time) while making it work as if it were designed for each individual user (only known at use time). User modeling research has attempted to address these issues. In this article,
+  A fundamental objective of human-computer interaction research is to make systems more usable, more useful, and to provide users with experiences fitting their specific background, knowledge and objectives. Specifically, today we want systems to do the "right" thing at the "right" time in the "right" way. Designers of human-computer systems face the formidable task of writing software for millions of users (at design time) while making it work as if it were designed for each individual user (only known at use time). User modeling research has attempted to address these issues \cite{Fischer2001}. In this article,
   I will provide an assessment of the current state of the art, a review of all the main researches that have been conducted in the field and its main tracks, essentially based on the papers submitted and accepted to the ACM UMAP international conference, which is the premier international conference dedicated to the subject of user modeling. A special emphasis is given to machine learning algorithms used to tackle challenges encountered in the field.
 \end{abstract}
 \begin{keywords}
@@ -26,19 +33,30 @@ User Modeling, Machine Learning
 
 \section{Introduction}
 
-All full papers and posters (short papers) submitted to some SBC conference,
-including any supporting documents, should be written in English or in
-Portuguese. The format paper should be A4 with single column, 3.5 cm for upper
-margin, 2.5 cm for bottom margin and 3.0 cm for lateral margins, without
-headers or footers. The main font must be Times, 12 point nominal size, with 6
-points of space before each paragraph. Page numbers must be suppressed.
 
-Full papers must respect the page limits defined by the conference.
-Conferences that publish just abstracts ask for \textbf{one}-page texts.
+\section{Main Tracks}
+\subsection{Personalized Recommender Systems}
+In the era of information and products overload, the task of browsing systems to find items of interest to users is becoming more difficult. Recommender systems play an important role in suchscenarios as they filter a large set of selections into a much smaller set of items that a user is likely to be interested in. They do this by utilising implicit or explicit user feedback on items recorded by the system. While historically recommender systems were more often tasked with rating prediction, nowadays the task of ranking items seems to be more relevant, and a number of methods optimised forthe ranking task have been proposed.
 
-\section{Results}
-\section{Discussion}
+\subsubsection{k-Nearest  Neighbor  Collaborative Filtering (kNN)} 
+(to be inserted)
+\subsubsection{Matrix Factorization (MF)}
+(to be inserted)
+\subsubsection{Bayesian personalized ranking}
+ \cite{Rendle2009} provides an investigation of the most common scenario  with  implicit  feedback  (e.g.clicks,purchases). There  are  many  methods  for item recommendation from implicit feedback like matrix factorization (MF) or adaptive k-nearest-neighbor  (kNN). Even  though  these methods  are  designed  for  the  item  prediction  task  of  personalized  ranking,  none  of them  is  directly  optimized  for  ranking. In \cite{Rendle2009}, a generic optimization criterion BPR-Opt for personalized ranking that is the maximum posterior estimator derived  from  a  Bayesian  analysis  of  the  problem. It also provides  a  generic  learning  algorithm  for  optimizing  models  with  respect to BPR-Opt.  The learning method is based on stochastic gradient descent with bootstrap sampling. It then shows how to apply that method to two state-of-the-art recommender models: matrix factorization and adaptive kNN.
 
+\subsubsection{Novelty Enhancement}
+In 2019, Jacek Wasilewski points the fact that novelty enhancement of recommendations is typically achieved through a post-filtering process applied on a candidate set of items. While it is an effective method, its performance heavily depends on the quality of a baseline algorithm, and many of the state-of-the-art algorithms generate recommendations that are relatively similar to what the user has interacted with in the past. This often leads to the filter bubble problem that many of standard algorithms suffer from, where recommendations closely follow past interactions with the system, resulting in recommendations being not particularly engaging \cite{Wasilewski2019}. He explores the use of sampling as a means of novelty enhancement in the Bayesian Personalized Ranking objective seen before.\\\\
+
+\subsection{Adaptative Hypermedia and The Semantic Web}
+\subsection{Intelligent User Interfaces}
+\subsection{Personalized Social Web}
+\subsection{Technology-Enhanced Adaptative Learning}
+\subsection{Privacy and Fairness}
+\subsection{Personalized Music Access}
+\subsection{Personalized Health}
+\subsection{Theories, Opinions and Reflections}
+\newpage
 \bibliographystyle{sbc}
 \bibliography{biblio}
 
